@@ -14,3 +14,4 @@ https://srwesley.github.io/svg-logo-maker/
 ## Video Link
 
 Since there is no actual web page for this, here is a screen recorded video of the deployment of the application:
+[Untitled_ Aug 23, 2023 11_51 PM.webm](https://github.com/srwesley/svg-logo-maker/assets/5975345/fa357080-96ef-4859-b3d6-6293c6075d43)
