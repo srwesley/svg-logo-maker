@@ -37,6 +37,7 @@ const questions = [
     },
 ];
 
+// This prompts the user for answers and takes into account what is entered
 inquirer.prompt(questions)
     .then((response) => {
         const text = response.text;
@@ -48,37 +49,38 @@ inquirer.prompt(questions)
     })
     .catch((err) => console.log(err));
 
-    function generateShapes(text, textColor, shapeColor, shapeType) {
-        if (shapeType === "Square") {
-            const square = new Square(text, textColor, shapeColor);
-            return fs.writeFile("logo.svg", square.render(), (err) => {
-                if (err) {
-                    console.log(err);
-                } else {
-                    console.log("Generated logo.svg!");
-                }
-            });
-        }
-
-        if (shapeType === "Circle") {
-            const circle = new Circle(text, textColor, shapeColor);
-            return fs.writeFile("logo.svg", circle.render(), (err) => {
-                if (err) {
-                    console.log(err);
-                } else {
-                    console.log("Generated logo.svg!");
-                }
-            });
-        }
-
-        if (shapeType === "Triangle") {
-            const triangle = new Triangle (text, textColor, shapeColor);
-            return fs.writeFile("logo.svg", triangle.render(), (err) => {
-                if (err) {
-                    console.log(err);
-                } else {
-                    console.log("Generated logo.svg!");
-                }
-            });
-        }
+// This is the function that takes the above answers and generates the svg logos
+function generateShapes(text, textColor, shapeColor, shapeType) {
+    if (shapeType === "Square") {
+        const square = new Square(text, textColor, shapeColor);
+        return fs.writeFile("logo.svg", square.render(), (err) => {
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("Generated logo.svg!");
+            }
+        });
     }
+
+    if (shapeType === "Circle") {
+        const circle = new Circle(text, textColor, shapeColor);
+        return fs.writeFile("logo.svg", circle.render(), (err) => {
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("Generated logo.svg!");
+            }
+        });
+    }
+
+    if (shapeType === "Triangle") {
+        const triangle = new Triangle (text, textColor, shapeColor);
+        return fs.writeFile("logo.svg", triangle.render(), (err) => {
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("Generated logo.svg!");
+            }
+        });
+    }
+ }
